@@ -1,0 +1,103 @@
+.channel-cover{
+  background-position: center center;
+  background-size: cover;
+  background-color: #ccc;
+}
+
+.channel__name {
+  font-size: 20px;
+  font-weight: 500;
+  color: #030303;
+}
+
+.channel__sub {
+  color: #606060;
+}
+
+.channel__sub-btn {
+  color: #fff;
+  background: #cc0000;
+  padding: 8px 18px;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 4px;
+}
+
+.channel__sub-btn.subscribed {
+  color: #666;
+  background-color: #ececec;
+}
+
+.channel__sub-btn:hover {
+  cursor: pointer;
+}
+
+.channel__sub-noti.disabled {
+  display: none;
+}
+
+.channel__sub-noti {
+  font-size: 28px;
+  margin-left: 12px;
+  margin-bottom: -4px;
+}
+
+/* Tab */
+
+.channel__tab {
+  display: flex;
+  position: relative;
+}
+
+.channel__tab-line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 102px;
+  border-radius: 4px;
+  height: 4px;
+  background-color: #606060;
+  transition: all 0.2s ease;
+}
+
+.channel__tab-item {
+  padding: 12px 30px 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #606060;
+}
+
+.channel__tab-item.active {
+  color: #030303;
+}
+
+.channel__tab-item:hover {
+  color: #030303;
+  cursor: pointer;
+}
+
+.channel__tab-search {
+  padding: 12px 20px 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #606060;
+  display: flex;
+}
+
+.channel__tab-search:hover {
+  cursor: pointer;
+}
+
+.channel__tab-search-input.disabled {
+  display: none;
+}
+
+.channel__tab-search-input {
+  margin-left: 4px;
+  border: none;
+  border-bottom: 2px solid #606060;
+}
+
+.channel__tab-search-input:focus {
+  outline: none;
+}

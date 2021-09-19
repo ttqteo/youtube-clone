@@ -1,0 +1,12 @@
+.search-filter-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-filter-wrapper span {
+  color: #606060;
+  font-weight: 500;
+  margin-left: 8px;
+  font-size: 16px;
+}

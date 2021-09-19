@@ -1,0 +1,39 @@
+.comment-row-wrapper {
+  margin: 24px 0;
+}
+
+.user-name {
+  font-weight: 500;
+}
+
+.comment-time {
+  font-size: 13px;
+  color: #606060;
+}
+
+.comment-react {
+  display: flex;
+  font-size: 12px;
+  margin-top: 12px;
+  color: #606060;
+}
+
+.comment-react .wrapper {
+  display: flex;
+  margin-right: 12px;
+}
+
+.comment-react .icon {
+  font-size: 14px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.comment-row-wrapper .icon-option {
+  display: none;
+}
+
+.comment-row-wrapper:hover .icon-option {
+  display: block;
+  cursor: pointer;
+}

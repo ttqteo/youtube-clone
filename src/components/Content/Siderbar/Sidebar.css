@@ -1,0 +1,23 @@
+.sidebar {
+  padding-top: 8px;
+  background: #fff;
+  height: 100vh;
+  flex: 0 0 240px;
+}
+
+.sidebar.min {
+  flex: 0 0 72px;
+}
+
+.sidebar__full,
+.sidebar__min {
+  position: fixed;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #a9a9a9;
+  line-height: 24px;
+  margin-left: 32px;
+  display: block;
+}

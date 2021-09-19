@@ -1,0 +1,17 @@
+.state-wrapper {
+  display: flex;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 16px 0;
+}
+
+.state-sort {
+  display: flex;
+  align-items: center;
+  margin-left: 32px;
+  cursor: pointer;
+}
+
+.state-wrapper .icon {
+  margin-right: 8px;
+}

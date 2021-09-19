@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Content from "./components/Content/index";
+import Header from "./components/Header";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import Watch from "./components/Content/Watch";
+import Channel from "./components/Content/Channel";
+import Search from "./components/Content/Search";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <div style={{ marginTop: "52px" }}>
+          <Switch>
+            <Route path="/search">
+              <Search />
+            </Route>
+            <Route path="/channel">
+              <Channel />
+            </Route>
+            <Route path="/watch">
+              <Watch />
+            </Route>
+            <Route path="/">
+              <Content />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
 
