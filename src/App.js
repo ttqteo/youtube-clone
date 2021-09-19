@@ -16,12 +16,14 @@ function App() {
             <Route path="/search">
               <Search />
             </Route>
-            <Route path="/channel">
-              <Channel />
-            </Route>
-            <Route path="/watch">
-              <Watch />
-            </Route>
+            <Route
+              path="/channel/:channelId"
+              render={(props) => <Channel {...props} />}
+            ></Route>
+            <Route
+              path="/watch/:videoLink"
+              render={(props) => <Watch {...props} />}
+            ></Route>
             <Route path="/">
               <Content />
             </Route>

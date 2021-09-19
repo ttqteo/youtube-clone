@@ -6,10 +6,14 @@ import PlaylistAddOutlinedIcon from "@material-ui/icons/PlaylistAddOutlined";
 import MoreHorizOutlinedIcon from "@material-ui/icons/MoreHorizOutlined";
 import "./WatchVideoCard.css";
 import { Col, Row } from "antd";
-import { video } from "../api";
+import { channel, videos } from "../api";
 import { Link } from "react-router-dom";
 
-export default function WatchVideoCard() {
+export default function WatchVideoCard({ videoLink }) {
+  const curVideo = videos.find((video) => video.link === videoLink);
+  const curChannel = channel.find(
+    (channel) => channel.channelID === curVideo.channelID
+  );
   return (
     <div>
       <div className="watch-video-card-wrapper">
@@ -17,30 +21,30 @@ export default function WatchVideoCard() {
           <iframe
             width="1280"
             height="720"
-            src={`https://www.youtube.com/embed/${video.link}`}
+            src={`https://www.youtube.com/embed/${videoLink}`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           />
         </div>
         <div className="watch-video-title-wrapper">
-          <span className="watch-video-hashtag">{video.hashtag}</span>
+          <span className="watch-video-hashtag">{curVideo.hashtag}</span>
           <br />
-          <span className="watch-video-title">{video.title}</span>
+          <span className="watch-video-title">{curVideo.title}</span>
         </div>
         <div className="watch-video-react">
           <span className="watch-video-react-left">
-            {video.views} • {video.date}
+            {curVideo.views} • {curVideo.date}
           </span>
           <div className="watch-video-react-right">
             <div className="like-wrapper">
               <div className="icon-wrapper">
                 <ThumbUpOutlinedIcon className="icon" />
-                <span className="text">661K</span>
+                <span className="text">{curVideo.like}</span>
               </div>
               <div className="icon-wrapper">
                 <ThumbDownOutlinedIcon className="icon" />
-                <span className="text">2.3K</span>
+                <span className="text">{curVideo.dislike}</span>
               </div>
             </div>
             <div className="icon-wrapper">
@@ -60,23 +64,26 @@ export default function WatchVideoCard() {
       <div className="watch-video-info">
         <Row>
           <Col flex="64px">
-            <Link to="/channel">
-              <img src={video.userAvatar} style={{ borderRadius: "50%" }} />
+            <Link to={`/channel/${curChannel.link}`}>
+              <img
+                src={curChannel.avatar}
+                style={{ borderRadius: "50%", width: "48px" }}
+              />
             </Link>
           </Col>
           <Col flex="auto" style={{ margin: "auto" }}>
             <div className="channel-wrapper">
-              <Link to="/channel" className="channel-name">
-                {video.channel}
+              <Link to={`/channel/${curChannel.link}`} className="channel-name">
+                {curChannel.name}
               </Link>
               <span className="channel-sub">
-                {video.subscriber} subscribers
+                {curChannel.subscriber} subscribers
               </span>
             </div>
           </Col>
         </Row>
         <div className="watch-video-caption">
-          <span>{video.caption}</span>
+          <span>{curVideo.caption}</span>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./VideoCard.css";
+import { channel } from "./api";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
@@ -7,8 +8,11 @@ import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import { Link } from "react-router-dom";
 
 export default function VideoCard({ type, video }) {
+  const channelVideo = channel.find(
+    (value) => value.channelID === video.channelID
+  );
   return (
-    <Link to="/watch">
+    <Link to={`/watch/${video.link}`}>
       <div className={`video-card ${type}`}>
         <div className={`thumbnail__wrapper ${type}`}>
           <img src={video.thumbnail} className={`thumbnail ${type}`} />
@@ -27,10 +31,15 @@ export default function VideoCard({ type, video }) {
         </div>
         <div className={`video-info ${type}`}>
           <div>
-            <Link to="/channel">
+            <Link to={`/channel/${channelVideo.channelID}`}>
               <div className={`user-info-wrapper ${type}`}>
-                <img src={video.userAvatar} className={`userAvatar ${type}`} />
-                <span className={`user-channel ${type}`}>{video.channel}</span>
+                <img
+                  src={channelVideo.avatar}
+                  className={`userAvatar ${type}`}
+                />
+                <span className={`user-channel ${type}`}>
+                  {channelVideo.name}
+                </span>
               </div>
             </Link>
             <span className={`video-caption ${type}`}>{video.caption}</span>
@@ -38,8 +47,10 @@ export default function VideoCard({ type, video }) {
           <div className={`video-center ${type}`}>
             <span className={`video-title ${type}`}>{video.title}</span>
             <div>
-              <Link to="/channel">
-                <span className={`video-channel ${type}`}>{video.channel}</span>
+              <Link to={`/channel/${channelVideo.channelID}`}>
+                <span className={`video-channel ${type}`}>
+                  {channelVideo.name}
+                </span>
               </Link>
             </div>
             <span className={`video-views ${type}`}>

@@ -2,7 +2,7 @@ import React from "react";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import "./ChannelPlaylistRow.css";
 import VideoCard from "../VideoCard";
-import { video } from "../api";
+import { videos, channel } from "../api";
 import { Col, Row } from "antd";
 
 export default function ChannelPlaylistRow({ name, dsc }) {
@@ -21,24 +21,11 @@ export default function ChannelPlaylistRow({ name, dsc }) {
       </div>
       <span style={{ color: "#606060" }}>{dsc}</span>
       <Row style={{ marginTop: "16px" }}>
-        <Col span={4}>
-          <VideoCard type="channel" video={video} />
-        </Col>
-        <Col span={4}>
-          <VideoCard type="channel" video={video} />
-        </Col>
-        <Col span={4}>
-          <VideoCard type="channel" video={video} />
-        </Col>
-        <Col span={4}>
-          <VideoCard type="channel" video={video} />
-        </Col>
-        <Col span={4}>
-          <VideoCard type="channel" video={video} />
-        </Col>
-        <Col span={4}>
-          <VideoCard type="channel" video={video} />
-        </Col>
+        {videos.map((video, index) => (
+          <Col span={4} key={index}>
+            <VideoCard type="channel" video={video} />
+          </Col>
+        ))}
       </Row>
     </div>
   );

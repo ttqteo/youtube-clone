@@ -1,5 +1,4 @@
 import React from "react";
-import { Row, Col } from "antd";
 import Sidebar from "./Siderbar/Sidebar";
 import RecommendVideo from "./Home/index";
 

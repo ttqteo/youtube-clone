@@ -1,5 +1,5 @@
 import React from "react";
-import { video } from "../api";
+import { channel, videos } from "../api";
 import { Avatar } from "antd";
 import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
@@ -33,14 +33,15 @@ function handleChannelTab(e) {
   }
 }
 
-export default function ContentChannel() {
+export default function ContentChannel({ channelId }) {
+  const channelVideo = channel.find((value) => value.channelID === channelId);
   return (
     <div style={{ backgroundColor: "#F1F1F1", width: "100%" }}>
       <div
         className="channel-cover"
         style={{
           height: "270px",
-          backgroundImage: `url(${video.coverChannel})`,
+          backgroundImage: `url(${channelVideo.cover})`,
         }}
       ></div>
       <div style={{ backgroundColor: "#FFF" }}>
@@ -53,15 +54,17 @@ export default function ContentChannel() {
             }}
           >
             <div style={{ display: "flex" }}>
-              <Avatar src={video.userAvatar} size={80}>
+              <Avatar src={channelVideo.avatar} size={80}>
                 {" "}
-                {video.userAvatar ? "" : video.channel.charAt(0).toUpperCase()}
+                {channelVideo.avatar
+                  ? ""
+                  : channelVideo.avatar.charAt(0).toUpperCase()}
               </Avatar>
               <div style={{ margin: "auto 0 auto 16px" }}>
-                <span className="channel__name">{video.channel}</span>
+                <span className="channel__name">{channelVideo.name}</span>
                 <br />
                 <span className="channel__sub">
-                  {video.subscriber} subscribers
+                  {channelVideo.subscriber} subscribers
                 </span>
               </div>
             </div>
@@ -74,16 +77,16 @@ export default function ContentChannel() {
             >
               <span
                 className={`channel__sub-btn ${
-                  video.isSubscribed && "subscribed"
+                  channelVideo.isSubscribed && "subscribed"
                 }`}
                 onClick={handleSubscribe}
               >
-                {video.isSubscribed ? "SUBSCRIBED" : "SUBSCRIBE"}
+                {channelVideo.isSubscribed ? "SUBSCRIBED" : "SUBSCRIBE"}
               </span>
               <div>
                 <NotificationsOutlinedIcon
                   className={`channel__sub-noti ${
-                    !video.isSubscribed && "disabled"
+                    !channelVideo.isSubscribed && "disabled"
                   } `}
                 />
               </div>

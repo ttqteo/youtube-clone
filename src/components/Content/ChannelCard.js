@@ -13,20 +13,20 @@ const handleSubscribe = () => {
   }`;
 };
 
-export default function ChannelCard({ video }) {
+export default function ChannelCard({ channel }) {
   return (
-    <div style={{ display: "flex", margin: "28px 0 12px" }}>
+    <div style={{ display: "flex", margin: "28px 0" }}>
       <div className="channel-card__avatar">
         <Link to="/channel">
-          <img src={video.userAvatar} className="channel-card__avatar-img" />
+          <img src={channel.avatar} className="channel-card__avatar-img" />
         </Link>
       </div>
       <Link to="/channel" className="channel-card__right">
-        <span className="channel-card__name">{video.channel}</span>
+        <span className="channel-card__name">{channel.name}</span>
         <span className="channel-card__info">
-          {video.subscriber} subscribers • {video.quantityVideo} videos
+          {channel.subscriber} subscribers • {channel.quantityVideo} videos
         </span>
-        <span className="channel-card__slogan">{video.channelSlogan}</span>
+        <span className="channel-card__slogan">{channel.slogan}</span>
       </Link>
       <div
         style={{
@@ -36,15 +36,15 @@ export default function ChannelCard({ video }) {
         }}
       >
         <span
-          className={`channel__sub-btn ${video.isSubscribed && "subscribed"}`}
+          className={`channel__sub-btn ${channel.isSubscribed && "subscribed"}`}
           onClick={handleSubscribe}
         >
-          {video.isSubscribed ? "SUBSCRIBED" : "SUBSCRIBE"}
+          {channel.isSubscribed ? "SUBSCRIBED" : "SUBSCRIBE"}
         </span>
         <div>
           <NotificationsOutlinedIcon
             className={`channel__sub-noti ${
-              !video.isSubscribed && "disabled"
+              !channel.isSubscribed && "disabled"
             } `}
           />
         </div>
