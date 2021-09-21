@@ -1,0 +1,114 @@
+.header__wrapper {
+  height: var(--header-height);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  background-color: var(--header-background-color);
+  top: 0;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  color: var(--heading-text-color);
+}
+
+.header__left .icon {
+  cursor: pointer;
+  position: relative;
+}
+
+.header__left .logo {
+  width: 90px;
+  cursor: pointer;
+}
+
+.header__center {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.header__center .input-search {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.header__center .input-search input{
+  border: 1px solid var(--border-category-item-color);
+  background-color: var(--header-input-background-color);
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  padding: 4px 16px;
+  font-size: 16px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.header__center .input-search input:focus {
+  border: 1px solid #0066CC;
+  outline: none;
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.header__center .input-search .icon-clear {
+  position: absolute;
+  right: 8px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.header__center .input-search .icon-clear.disabled {
+  display: none;
+}
+
+.header__center .icon-search {
+  color: var(--heading-text-color);
+  background-color: var(--header-input-search-background-color);
+  border: 1px solid var(--border-category-item-color);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 0 19px;
+  cursor: pointer;
+}
+
+.header__center .icon {
+  margin-left: 8px;
+  background-color: var(--background-color);
+  color: var(--heading-text-color);
+  border-radius: 50%;
+  font-size: 32px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  margin-right: 28px;
+}
+
+.header__right .icon {
+  margin-right: 28px;
+  color: var(--heading-text-color);
+  cursor: pointer;
+}
+
+.header__right .user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

@@ -1,0 +1,35 @@
+.channel-card__avatar {
+  min-width: 360px;
+  display: flex;
+  justify-content: center;
+}
+
+.channel-card__avatar-img {
+  width: 136px;
+  border-radius: 50%;
+}
+
+.channel-card__right {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  padding-right: 16px;
+  margin-left: 16px;
+}
+
+.channel-card__name {
+  color: var(--heading-text-color);
+  font-size: 18px;
+}
+
+.channel-card__info {
+  color: var(--text-color);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.channel-card__slogan {
+  color: var(--text-color);
+  font-size: 12px;
+  margin-top: 4px;
+}

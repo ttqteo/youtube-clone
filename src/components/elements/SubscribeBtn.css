@@ -1,0 +1,27 @@
+.subscribe-btn {
+  color: #fff;
+  background: #cc0000;
+  padding: 8px 18px;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 4px;
+}
+
+.subscribe-btn.subscribed {
+  color: #666;
+  background-color: #ececec;
+}
+
+.subscribe-btn:hover {
+  cursor: pointer;
+}
+
+.subscribe-btn-noti.disabled {
+  display: none;
+}
+
+.subscribe-btn-noti {
+  font-size: 28px;
+  margin-left: 12px;
+  margin-bottom: -4px;
+}

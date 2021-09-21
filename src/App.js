@@ -1,36 +1,46 @@
 import "./App.css";
-import Content from "./components/Content/index";
-import Header from "./components/Header";
+import Content from "./components/Home/index";
+import Header from "./components/Header/Header";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-import Watch from "./components/Content/Watch";
-import Channel from "./components/Content/Channel";
-import Search from "./components/Content/Search";
+import Watch from "./components/Watch";
+import Channel from "./components/Channel";
+import Search from "./components/Search";
+import Sidebar from "./components/Siderbar/Sidebar";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <Router>
         <Header />
-        <div style={{ marginTop: "52px" }}>
-          <Switch>
-            <Route path="/search">
+        <Switch>
+          <Route path="/search">
+            <div style={{ display: "flex" }}>
+              <Sidebar />
               <Search />
-            </Route>
-            <Route
-              path="/channel/:channelId"
-              render={(props) => <Channel {...props} />}
-            ></Route>
-            <Route
-              path="/watch/:videoLink"
-              render={(props) => <Watch {...props} />}
-            ></Route>
-            <Route path="/">
+            </div>
+          </Route>
+          <Route
+            path="/watch/:videoLink"
+            render={(props) => <Watch {...props} />}
+          />
+          <Route
+            path="/channel/:channelId"
+            render={(props) => (
+              <div style={{ display: "flex" }}>
+                <Sidebar />
+                <Channel {...props} />
+              </div>
+            )}
+          />
+          <Route path="/">
+            <div style={{ display: "flex" }}>
+              <Sidebar />
               <Content />
-            </Route>
-          </Switch>
-        </div>
-      </div>
-    </Router>
+            </div>
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

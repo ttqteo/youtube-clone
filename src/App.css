@@ -1,13 +1,81 @@
+:root {
+  --header-height: 60px;
+  --background-color: #F9F9F9;
+  --header-background-color: #FFF;
+  --select-background-color: #030303;
+  --heading-text-color: #020202;
+  --text-color: #606060;
+  --select-text-color: #fff;
+
+  --header-input-background-color: #FFF;
+  --header-input-search-background-color: #f8f8f8;
+  
+  --border-category-item-color: rgba(0, 0, 0, 0.1);
+  --category-item-background-color: rgba(0, 0, 0, 0.05);
+  --select-category-item-background-color: #030303;
+
+  --select-sidebar-background-color: rgba(0, 0, 0, 0.1);
+  --hover-select-sidebar-background-color: rgba(0, 0, 0, 0.15);
+  --hover-sidebar-background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+  --background-color: #181818;
+  --header-background-color: #202020;
+  --heading-text-color: #FFF;
+  --text-color: #AAA;
+  --select-text-color: #030303;
+
+  --header-input-background-color: #121212;
+  --header-input-search-background-color: hsla(0, 0, 100%, 0.08);
+
+  --border-category-item-color: rgba(255, 255, 255, 0.1);
+  --category-item-background-color: rgba(255, 255, 255, 0.1);
+  --select-category-item-background-color: #fff;
+
+  --select-sidebar-background-color: rgba(255, 255, 255, 0.1);
+  --hover-select-sidebar-background-color: rgba(255, 255, 255, 0.15);
+  --hover-sidebar-background-color: rgba(255, 255, 255, 0.05);
+}
+
 * {
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  background-color: var(--background-color)!important;
+  color: var(--heading-text-color)!important;
+}
+
+/* Active click Button */
+
+.btn-click:after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  top: -8px;
+  right: -8px;
+}
+
+.btn-click:active:after {
+  background-color: var(--header-background-color);
+  filter: brightness(0.94);
+}
+
+/* Line */
+
 .line{
   width: 100%;
   height: 1px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border-category-item-color);
   margin: 8px 0;
 }
+
+/* Disabled */
 
 .disabled {
   display: none;

@@ -1,0 +1,29 @@
+.category {
+  background-color: var(--header-background-color);
+  border-top: 1px solid var(--border-category-item-color);
+  border-bottom: 1px solid var(--border-category-item-color);
+  display: flex;
+  padding: 8px 8px 8px 16px;
+}
+
+.item {
+  font-size: 14px;
+  line-height: 24px;
+  background-color: var(--category-item-background-color);
+  border: 1px solid var(--border-category-item-color);
+  border-radius: 30px;
+  padding: 4px 12px;
+  margin-right: 12px;
+}
+
+.item:hover {
+  cursor: pointer;
+  filter: brightness(0.90);
+  transition: filter 0.3s ease-in-out;
+}
+
+.item.selected {
+  color: var(--select-text-color);
+  border: none;
+  background-color: var(--select-category-item-background-color);
+}
