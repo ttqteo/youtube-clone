@@ -47,6 +47,7 @@
 body {
   background-color: var(--background-color)!important;
   color: var(--heading-text-color)!important;
+  line-height: 1.5715;
 }
 
 /* Active click Button */

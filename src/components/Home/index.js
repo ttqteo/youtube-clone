@@ -15,9 +15,12 @@ export default function Content() {
         ))}
       </div>
       <div className="video" style={{ margin: "16px 40px" }}>
-        <h1 className="recommend-title" style={{ fontSize: "20px" }}>
+        <div
+          className="recommend-title"
+          style={{ fontSize: "20px", fontWeight: "500", marginBottom: "10px" }}
+        >
           Recommend
-        </h1>
+        </div>
         <Row gutter={16}>
           {videos.map((video, index) => (
             <Col span={6} key={index}>

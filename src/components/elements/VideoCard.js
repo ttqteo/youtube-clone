@@ -47,7 +47,7 @@ export default function VideoCard({ type, video }) {
           </div>
           <div className={`video-center ${type}`}>
             <span className={`video-title ${type}`}>{video.title}</span>
-            <div>
+            <div style={{ marginBottom: "6px" }}>
               <Link to={`/channel/${channelVideo.channelID}`}>
                 <span className={`video-channel ${type}`}>
                   {channelVideo.name}
