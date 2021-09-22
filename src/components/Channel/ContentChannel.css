@@ -5,7 +5,7 @@
 }
 
 .channel__info {
-  background-color: var(--channel-tab-background-color);
+  background-color: var(--background-color);
 }
 
 .channel__name {
@@ -35,9 +35,9 @@
   position: fixed;
   z-index: 999998;
   top: 60px;
-  height: 43px;
+  height: 41px;
   width: 100%;
-  background: var(--channel-tab-background-color);
+  background: var(--background-color);
 }
 
 .channel__tab-line {

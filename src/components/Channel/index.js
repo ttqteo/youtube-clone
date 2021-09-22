@@ -43,14 +43,16 @@ export default function Channel(props) {
       .classList.toggle("fixed", scrollTop > 365);
   }, [scrollTop]);
   return (
-    <div style={{ width: "100%" }}>
+    <div
+      style={{ width: "100%", background: "var(--channel-background-color)" }}
+    >
       <div
         className="channel-cover"
         style={{
           height: "270px",
           backgroundImage: `url(${channelVideo.cover})`,
         }}
-      ></div>
+      />
       <div className="channel__info">
         <div style={{ margin: "0 auto", width: "1284px" }}>
           <div
@@ -96,7 +98,13 @@ export default function Channel(props) {
         </div>
       </div>
       <div className="channel__tab-wrapper"></div>
-      <div style={{ margin: "0 auto", width: "1284px", minHeight: "100vh" }}>
+      <div
+        style={{
+          margin: "0 auto",
+          width: "1284px",
+          minHeight: "100vh",
+        }}
+      >
         {playlists.map((playlist, index) => (
           <div key={index}>
             <ChannelPlaylistRow

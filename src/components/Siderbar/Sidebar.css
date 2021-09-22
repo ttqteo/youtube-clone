@@ -1,8 +1,8 @@
 .sidebar {
   padding-top: 8px;
   background: var(--header-background-color);
+  min-height: 100vh;
   flex: 0 0 240px;
-  height: 100vw;
 }
 
 .sidebar.min {
@@ -19,6 +19,18 @@
   font-weight: 500;
   color: var(--text-color);
   line-height: 24px;
-  margin-left: 32px;
+  margin-left: 28px;
   display: block;
+}
+
+.feature {
+  margin-left: 24px;
+}
+
+.feature.disabled {
+  display: none;
+}
+
+.feature li {
+  margin-bottom: 6px;
 }

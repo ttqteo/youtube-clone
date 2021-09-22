@@ -9,6 +9,10 @@ import QueryBuilderOutlinedIcon from "@material-ui/icons/QueryBuilderOutlined";
 import SidebarRow from "./SidebarRow";
 import "./Sidebar.css";
 
+const handleFeature = () => {
+  document.querySelector(".feature").classList.toggle("disabled");
+};
+
 export default function Sidebar() {
   return (
     <div className="sidebar">
@@ -39,6 +43,30 @@ export default function Sidebar() {
         />
         <div className="line" />
         <span className="copyright">© 2021 Google LLC</span>
+        <div className="line" />
+        <div
+          style={{
+            fontWeight: "500",
+            margin: "8px 24px 4px",
+            cursor: "pointer",
+          }}
+          onClick={handleFeature}
+        >
+          ► Tính năng{" "}
+        </div>
+        <ul className="feature disabled">
+          <li>• DarkMode</li>
+          <li>• Tắt/mở Sidebar</li>
+          <li>• Search (chỉ Apple)</li>
+          <li>• Vào Channel riêng</li>
+          <li>• Xem Video</li>
+          <li>• Hover từng Video</li>
+          <li>• Sub/unsub</li>
+          <li style={{ fontWeight: "500" }}>Sắp phát triển</li>
+          <li>• Responsive Tablet, Mobile</li>
+          <li>• Một vài Modal</li>
+          <li>• Từng tab Channel</li>
+        </ul>
       </div>
       <div className="sidebar__min disabled" style={{ width: "72px" }}>
         <SidebarRow Icon={HomeIcon} Name="Home" selected type="min" />
