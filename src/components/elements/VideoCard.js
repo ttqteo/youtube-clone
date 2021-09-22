@@ -11,6 +11,7 @@ export default function VideoCard({ type, video }) {
   const channelVideo = channel.find(
     (value) => value.channelID === video.channelID
   );
+
   return (
     <Link to={`/watch/${video.link}`}>
       <div className={`video-card ${type}`}>

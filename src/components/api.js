@@ -21,6 +21,7 @@ const channel = [
       "Welcome to the offcial Apple Youtube channel. Here you'll find news about product launches, tutorials, and other great content.",
     subscriber: "15.1M",
     quantityVideo: "200",
+    isOfficial: "false",
   },
   {
     channelID: "002",
@@ -34,6 +35,7 @@ const channel = [
       "Welcome to the offcial Apple Youtube channel. Here you'll find news about product launches, tutorials, and other great content.",
     subscriber: "15.1M",
     quantityVideo: "200",
+    isOfficial: "false",
   },
 ];
 
@@ -160,4 +162,25 @@ const videos = [
   },
 ];
 
-export { category, videos, channel };
+const playlists = [
+  {
+    name: "iPhone 13",
+    dsc: "Learn about the new iPhone 13 and iPhone 13 Pro",
+    videos: [
+      "72cAe_2LAFQ",
+      "XKfgdkcIUxw",
+      "c3CZX-lnAIc",
+      "dDKbwvSvg0w",
+      "m43rh-pI0P0",
+      "EvGOlAkLSLw",
+      "0TD96VTf0Xs",
+    ],
+  },
+  {
+    name: "Apple Event",
+    dsc: "See what’s possible given an iPhone, simple materials, and boundless creativity",
+    videos: ["EvGOlAkLSLw", "0TD96VTf0Xs"],
+  },
+];
+
+export { category, videos, channel, playlists };

@@ -61,6 +61,7 @@ export default function WatchVideoCard({ videoLink }) {
           </div>
         </div>
       </div>
+      <div className="line" />
       <div className="watch-video-info">
         <Row>
           <Col flex="64px">
@@ -88,6 +89,7 @@ export default function WatchVideoCard({ videoLink }) {
         <div className="watch-video-caption">
           <span>{curVideo.caption}</span>
         </div>
+        <div className="line" />
       </div>
     </div>
   );

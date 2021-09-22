@@ -1,5 +1,5 @@
-import React from "react";
-import { channel, videos } from "../api";
+import React, { useEffect, useState } from "react";
+import { channel, playlists } from "../api";
 import { Avatar } from "antd";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import "./ContentChannel.css";
@@ -12,7 +12,8 @@ function handleChannelTab(e) {
       .querySelector(".channel__tab-search-input")
       .classList.remove("disabled");
     document.querySelector(".channel__tab-search-input").focus();
-  } else {
+  }
+  if (e.target.closest(".channel__tab-item")) {
     document
       .querySelector(".channel__tab-item.active")
       .classList.remove("active");
@@ -24,8 +25,23 @@ function handleChannelTab(e) {
 }
 
 export default function Channel(props) {
+  const [scrollTop, setScrollTop] = useState(0);
   const { channelId } = props.match.params;
   const channelVideo = channel.find((value) => value.channelID === channelId);
+  const onScroll = (e) => {
+    setScrollTop(e.target.documentElement.scrollTop);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+  }, []);
+  useEffect(() => {
+    document
+      .querySelector(".channel__tab-wrapper")
+      .classList.toggle("fixed", scrollTop > 365);
+    document
+      .querySelector(".channel__tab")
+      .classList.toggle("fixed", scrollTop > 365);
+  }, [scrollTop]);
   return (
     <div style={{ width: "100%" }}>
       <div
@@ -61,7 +77,6 @@ export default function Channel(props) {
             </div>
             <SubscribeBtn channelVideo={channelVideo} />
           </div>
-
           <div className="channel__tab" onClick={(e) => handleChannelTab(e)}>
             <div className="channel__tab-item active">HOME</div>
             <div className="channel__tab-item">VIDEOS</div>
@@ -80,16 +95,20 @@ export default function Channel(props) {
           </div>
         </div>
       </div>
+      <div className="channel__tab-wrapper"></div>
       <div style={{ margin: "0 auto", width: "1284px", minHeight: "100vh" }}>
-        <ChannelPlaylistRow
-          name="iPhone 13"
-          dsc="Learn about the new iPhone 13 and iPhone 13 Pro"
-        />
-        <hr />
-        <ChannelPlaylistRow
-          name="iPhone 13"
-          dsc="Learn about the new iPhone 13 and iPhone 13 Pro"
-        />
+        {playlists.map((playlist, index) => (
+          <div key={index}>
+            <ChannelPlaylistRow
+              name={playlist.name}
+              dsc={playlist.dsc}
+              index={index}
+              playlist={playlist}
+            />
+            {index !== playlists.length && <div className="line" />}
+          </div>
+        ))}
+        <div className="line" />
       </div>
     </div>
   );

@@ -12,3 +12,45 @@
   font-weight: 500;
   margin-left: 8px;
 }
+
+.channel-row__playlist {
+  position: relative;
+  overflow: hidden;
+}
+
+.channel-row__playlist::-webkit-scrollbar {
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.channel-row__icon-next,
+.channel-row__icon-back {
+  position: absolute;
+  cursor: pointer;
+  color: var(--heading-text-color);
+  background: var(--header-background-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 24px;
+  z-index: 99;
+}
+
+.channel-row__icon-next.disabled,
+.channel-row__icon-back.disabled {
+  display: none;
+}
+
+.channel-row__icon-next {
+  right: -16px;
+  top: 37px;
+}
+
+.channel-row__icon-back {
+  left: -16px;
+  top: 37px;
+}

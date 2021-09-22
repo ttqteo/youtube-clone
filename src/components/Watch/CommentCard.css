@@ -8,14 +8,15 @@
 
 .comment-time {
   font-size: 13px;
-  color: #606060;
+  margin-left: 4px;
+  color: var(--text-color);
 }
 
 .comment-react {
   display: flex;
   font-size: 12px;
   margin-top: 12px;
-  color: #606060;
+  color: var(--heading-text-color);
 }
 
 .comment-react .wrapper {

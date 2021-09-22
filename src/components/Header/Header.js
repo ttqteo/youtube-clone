@@ -102,6 +102,7 @@ export default function Header() {
             <Avatar
               className="user"
               size="small"
+              src="https://yt3.ggpht.com/ytc/AKedOLRIec7gUC89wc0OGstCraoIatVagBJHOpLW-n5QrQ=s176-c-k-c0x00ffffff-no-rj-mo"
               icon={<PersonOutlineOutlinedIcon fontSize="small" />}
             />
           </Link>
