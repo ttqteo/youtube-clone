@@ -49,6 +49,7 @@ export default function Sidebar() {
             fontWeight: "500",
             margin: "8px 24px 4px",
             cursor: "pointer",
+            fontSize: "14px",
           }}
           onClick={handleFeature}
         >
