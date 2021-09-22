@@ -160,6 +160,36 @@ const videos = [
     dislike: "17K",
     channelID: "001",
   },
+  {
+    title: "iPad | Your next computer is not a computer | Apple",
+    link: "awTP7IUY3uo",
+    thumbnail:
+      "https://i.ytimg.com/vi/awTP7IUY3uo/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDk0ohynZ8n8t4Gjw_gVqzPwCSuJg",
+    views: "8.58M views",
+    date: "Jun 4, 2021",
+    caption:
+      "iPad has everything you need to work, learn, create and play with complete freedom. Big immersive retina displays, available cellular connectivity, and incredible battery life, all in thin and light designs. And with the new iPad Pro supercharged by the Apple M1 chip, there’s an iPad for anyone and anything. ",
+    timestamp: "1:08",
+    hashtag: "",
+    like: "20K",
+    dislike: "7.3K",
+    channelID: "001",
+  },
+  {
+    title: "Introducing iPad Pro | Apple",
+    link: "aOq49euWnIo",
+    thumbnail:
+      "https://i.ytimg.com/vi/aOq49euWnIo/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB-ucwacZXd9KrlIQwVWzBV34OekQ",
+    views: "7.46M views",
+    date: "Apr 21, 2021",
+    caption:
+      "Supercharged by the Apple M1 chip. 12.9” Liquid Retina XDR display for extreme contrast and breathtaking detail. Blazing fast 5G wireless. A new ultra wide camera with Center Stage. Thunderbolt, the fastest, most versatile port ever on iPad. And works perfectly with Magic Keyboard and Apple Pencil.",
+    timestamp: "1:32",
+    hashtag: "#AppleEvent #SpringLoaded #iPadPro",
+    like: "145K",
+    dislike: "6K",
+    channelID: "001",
+  },
 ];
 
 const playlists = [
@@ -179,7 +209,12 @@ const playlists = [
   {
     name: "Apple Event",
     dsc: "See what’s possible given an iPhone, simple materials, and boundless creativity",
-    videos: ["EvGOlAkLSLw", "0TD96VTf0Xs"],
+    videos: ["awTP7IUY3uo", "0TD96VTf0Xs"],
+  },
+  {
+    name: "iPad",
+    dsc: "Check out the latest from iPad mini, iPad Pro, iPad Air and Apple Pencil.",
+    videos: ["gdeqbg8QFJM", "EvGOlAkLSLw", "aOq49euWnIo"],
   },
 ];
 

@@ -2,6 +2,7 @@
   padding-top: 8px;
   background: var(--header-background-color);
   flex: 0 0 240px;
+  height: 100vw;
 }
 
 .sidebar.min {

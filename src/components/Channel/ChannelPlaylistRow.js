@@ -47,7 +47,7 @@ export default function ChannelPlaylistRow({ name, dsc, index, playlist }) {
     }
   };
   return (
-    <div style={{ padding: "24px 0 20px" }}>
+    <div style={{ padding: "12px 0" }}>
       <div style={{ display: "flex", alignItems: "center", margin: "4px 0" }}>
         <span
           style={{ fontSize: "16px", fontWeight: "500", cursor: "pointer" }}

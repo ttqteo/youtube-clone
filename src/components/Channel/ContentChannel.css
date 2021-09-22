@@ -35,7 +35,7 @@
   position: fixed;
   z-index: 999998;
   top: 60px;
-  height: 45px;
+  height: 43px;
   width: 100%;
   background: var(--channel-tab-background-color);
 }
@@ -53,7 +53,7 @@
 
 .channel__tab-item {
   padding: 12px 30px 8px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text-color);
 }

@@ -105,10 +105,9 @@ export default function Channel(props) {
               index={index}
               playlist={playlist}
             />
-            {index !== playlists.length && <div className="line" />}
+            {index < playlists.length - 1 && <div className="line" />}
           </div>
         ))}
-        <div className="line" />
       </div>
     </div>
   );
