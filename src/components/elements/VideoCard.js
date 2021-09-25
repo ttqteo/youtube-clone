@@ -6,6 +6,23 @@ import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import { Link } from "react-router-dom";
+import HomeModal from "../modals/HomeModal";
+
+const handleClickOption = (e) => {
+  e.preventDefault();
+  const left = e.target.getBoundingClientRect().left - 160;
+  const top = e.target.getBoundingClientRect().top + 32;
+  const modal = e.target.closest(".video-card").querySelector(".home-modal");
+  modal.style.top = top + "px";
+  modal.style.left = left + "px";
+  const state = modal.classList.contains("disabled");
+  document.querySelectorAll(".home-modal").forEach((value) => {
+    if (!value.classList.contains("disabled"))
+      value.classList.toggle("disabled");
+  });
+  modal.classList.toggle("disabled", !state);
+  document.body.classList.toggle("modal-open");
+};
 
 export default function VideoCard({ type, video }) {
   const channelVideo = channel.find(
@@ -58,10 +75,14 @@ export default function VideoCard({ type, video }) {
               {video.views} • {video.date}
             </span>
           </div>
-          <div className={`video-option-icon btn-click ${type}`}>
+          <div
+            className={`video-option-icon btn-click ${type}`}
+            onClick={(e) => handleClickOption(e)}
+          >
             <MoreVertIcon />
           </div>
         </div>
+        <HomeModal />
       </div>
     </Link>
   );

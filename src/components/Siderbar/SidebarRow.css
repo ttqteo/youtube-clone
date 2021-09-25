@@ -5,7 +5,7 @@
 }
 
 .sidebarRow:hover {
-  cursor: pointer;
+  cursor: no-drop;
   background-color: var(--hover-sidebar-background-color);
 }
 

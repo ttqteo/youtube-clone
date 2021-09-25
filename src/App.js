@@ -1,23 +1,46 @@
 import "./App.css";
 import Content from "./components/Home/index";
 import Header from "./components/Header/Header";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import Watch from "./components/Watch";
 import Channel from "./components/Channel";
 import Search from "./components/Search";
 import Sidebar from "./components/Siderbar/Sidebar";
+import React from "react";
+
+const handleClickApp = (e) => {
+  document.querySelectorAll(".home-modal").forEach((value) => {
+    if (
+      !value.classList.contains("disabled") &&
+      !e.target.closest(".video-option-icon")
+    ) {
+      value.classList.toggle("disabled");
+      document.body.classList.toggle("modal-open", false);
+    }
+  });
+};
 
 function App() {
+  let location = useLocation();
+  React.useEffect(() => {
+    if (location.pathname.includes("watch")) {
+      document.querySelector(".sidebar").classList.add("toggle");
+      document.querySelector(".sidebar").classList.remove("min");
+      document.querySelector(".sidebar__full").classList.remove("disabled");
+      document.querySelector(".sidebar__min").classList.add("disabled");
+    } else {
+      document.querySelector(".sidebar").classList.remove("toggle");
+      document.querySelector(".sidebar").classList.remove("hide");
+    }
+  }, [location]);
   return (
-    <div className="App">
-      <Router>
-        <Header />
+    <div className="App" onClick={(e) => handleClickApp(e)}>
+      <Header />
+      <div style={{ display: "flex" }}>
+        <Sidebar />
         <Switch>
           <Route path="/search">
-            <div style={{ display: "flex" }}>
-              <Sidebar />
-              <Search />
-            </div>
+            <Search />
           </Route>
           <Route
             path="/watch/:videoLink"
@@ -25,21 +48,13 @@ function App() {
           />
           <Route
             path="/channel/:channelId"
-            render={(props) => (
-              <div style={{ display: "flex" }}>
-                <Sidebar />
-                <Channel {...props} />
-              </div>
-            )}
+            render={(props) => <Channel {...props} />}
           />
           <Route path="/">
-            <div style={{ display: "flex" }}>
-              <Sidebar />
-              <Content />
-            </div>
+            <Content />
           </Route>
         </Switch>
-      </Router>
+      </div>
     </div>
   );
 }

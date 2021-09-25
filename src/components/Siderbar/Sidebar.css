@@ -1,8 +1,32 @@
 .sidebar {
-  padding-top: 8px;
-  background: var(--header-background-color);
-  min-height: 100vh;
+  position: relative;
   flex: 0 0 240px;
+}
+
+.sidebar.toggle {
+  position: fixed;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.2s ease-in;
+}
+
+.sidebar.toggle.hide {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  transition: background 0.2s ease-in;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar.toggle .sidebar__full {
+  transform: translateX(-240px);
+  transition: transform 0.3s ease-in-out;
+  transition-delay: 0.1s;
+}
+.sidebar.toggle.hide .sidebar__full{
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+  transition-delay: 0.1s;
 }
 
 .sidebar.min {
@@ -12,6 +36,10 @@
 .sidebar__full,
 .sidebar__min {
   position: fixed;
+  z-index: 999;
+  background: var(--header-background-color);
+  min-height: 100vh;
+  padding-top: 8px;
 }
 
 .copyright {

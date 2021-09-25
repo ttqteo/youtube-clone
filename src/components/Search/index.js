@@ -8,7 +8,13 @@ import "./Search.css";
 export default function Search() {
   return (
     <div style={{ width: "100%" }}>
-      <div style={{ width: "1098px", margin: "24px auto" }}>
+      <div
+        style={{
+          maxWidth: "1098px",
+          margin: "24px auto",
+          padding: "0 16px",
+        }}
+      >
         <div className="search-filter-wrapper">
           <SettingsIcon />
           <span>FILTERS</span>

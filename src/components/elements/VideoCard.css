@@ -44,6 +44,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  cursor: no-drop;
 }
 
 .function-btn-icon:nth-child(1)::before {
@@ -208,8 +209,12 @@
 
 /* Channel */
 
+.video-card.channel {
+  margin-bottom: 8px;
+}
+
 .thumbnail.channel {
-  width: 210px;
+  width: 100%;
   margin-bottom: 4px;
 }
 

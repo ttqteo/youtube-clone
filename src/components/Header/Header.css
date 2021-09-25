@@ -8,7 +8,7 @@
   align-items: center;
   height: var(--header-height);
   position: fixed;
-  z-index: 9999;
+  z-index: 9900;
   width: 100%;
   background-color: var(--header-background-color);
   top: 0;

@@ -1,7 +1,7 @@
 .search-filter-wrapper {
   display: flex;
   align-items: center;
-  cursor: pointer;
+  cursor: no-drop;
 }
 
 .search-filter-wrapper span {

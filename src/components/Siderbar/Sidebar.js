@@ -13,9 +13,15 @@ const handleFeature = () => {
   document.querySelector(".feature").classList.toggle("disabled");
 };
 
+const handleWatch = (e) => {
+  if (e.target.closest(".App").querySelector(".watch")) {
+    document.querySelector(".sidebar").classList.toggle("hide");
+  }
+};
+
 export default function Sidebar() {
   return (
-    <div className="sidebar">
+    <div className="sidebar" onClick={(e) => handleWatch(e)}>
       <div className="sidebar__full">
         <SidebarRow Icon={HomeIcon} Name="Home" selected type="full" />
         <SidebarRow Icon={ExploreOutlinedIcon} Name="Explore" type="full" />
@@ -63,10 +69,11 @@ export default function Sidebar() {
           <li>• Xem Video</li>
           <li>• Hover từng Video</li>
           <li>• Sub/unsub</li>
+          <li>• Modal option Video</li>
+          <li>• Từng tab Channel</li>
           <li style={{ fontWeight: "500" }}>Sắp phát triển</li>
           <li>• Responsive Tablet, Mobile</li>
-          <li>• Một vài Modal</li>
-          <li>• Từng tab Channel</li>
+          <li>• Đang cập nhật...</li>
         </ul>
       </div>
       <div className="sidebar__min disabled" style={{ width: "72px" }}>

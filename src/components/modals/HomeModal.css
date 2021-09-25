@@ -1,0 +1,8 @@
+.home-modal {
+  position: fixed;
+  background: var(--header-background-color);
+  z-index: 999;
+  color: var(--heading-text-color);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+}

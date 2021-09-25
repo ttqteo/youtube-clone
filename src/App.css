@@ -50,6 +50,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background-color)!important;
   color: var(--heading-text-color)!important;
@@ -57,7 +61,44 @@ body {
   font-size: 14px;
 }
 
+body.modal-open {
+  height: 100vh;
+  overflow-y: hidden;
+  padding-right: 10px;
+}
+
+body.modal-open .header {
+  padding-right: 10px;
+}
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* Active click Button */
+
+.btn-click {
+  display: flex;
+}
 
 .btn-click:after {
   content: "";

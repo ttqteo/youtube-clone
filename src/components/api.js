@@ -6,6 +6,18 @@ const category = [
   "Apple",
   "iPhone 13",
   "Background Music",
+  "iPhone 13",
+  "Background Music",
+  "iPhone 13",
+  "Background Music",
+  "iPhone 13",
+  "Background Music",
+  "iPhone 13",
+  "Background Music",
+  "iPhone 13",
+  "Background Music",
+  "iPhone 13",
+  "End Category",
 ];
 
 const channel = [
@@ -194,6 +206,7 @@ const videos = [
 
 const playlists = [
   {
+    channelId: "001",
     name: "iPhone 13",
     dsc: "Learn about the new iPhone 13 and iPhone 13 Pro",
     videos: [
@@ -207,11 +220,13 @@ const playlists = [
     ],
   },
   {
+    channelId: "001",
     name: "Apple Event",
     dsc: "See what’s possible given an iPhone, simple materials, and boundless creativity",
     videos: ["awTP7IUY3uo", "0TD96VTf0Xs"],
   },
   {
+    channelId: "001",
     name: "iPad",
     dsc: "Check out the latest from iPad mini, iPad Pro, iPad Air and Apple Pencil.",
     videos: ["gdeqbg8QFJM", "EvGOlAkLSLw", "aOq49euWnIo"],

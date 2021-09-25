@@ -87,10 +87,19 @@
   margin-left: 4px;
   border: none;
   border-bottom: 2px solid var(--heading-text-color);
-  background-color: var(--header-background-color);
+  background-color: var(--background-color);
   color: var(--heading-text-color);
 }
 
 .channel__tab-search-input:focus {
   outline: none;
+}
+
+.channel__tab-content {
+  padding: 12px 0;
+  display: none;
+}
+
+.channel__tab-content.active {
+  display: block;
 }

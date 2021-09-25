@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { channel, playlists } from "../api";
+import { channel, playlists, videos } from "../api";
 import { Avatar } from "antd";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import "./ContentChannel.css";
 import ChannelPlaylistRow from "./ChannelPlaylistRow";
 import SubscribeBtn from "../elements/SubscribeBtn";
+import ChannelVideos from "./ChannelVideos";
+import ChannelPlaylistFull from "./ChannelPlaylistFull";
+import ChannelAbout from "./ChannelAbout";
 
 function handleChannelTab(e) {
   if (e.target.closest(".channel__tab-search")) {
@@ -17,7 +20,14 @@ function handleChannelTab(e) {
     document
       .querySelector(".channel__tab-item.active")
       .classList.remove("active");
+    document
+      .querySelector(".channel__tab-content.active")
+      .classList.remove("active");
     e.target.classList.add("active");
+    const index = e.target.getAttribute("data-index");
+    document
+      .querySelectorAll(".channel__tab-content")
+      [index].classList.add("active");
     const line = document.querySelector(".channel__tab-line");
     line.style.left = e.target.offsetLeft + "px";
     line.style.width = e.target.offsetWidth + "px";
@@ -37,11 +47,12 @@ export default function Channel(props) {
   useEffect(() => {
     document
       .querySelector(".channel__tab-wrapper")
-      .classList.toggle("fixed", scrollTop > 365);
+      .classList.toggle("fixed", scrollTop > 380);
     document
       .querySelector(".channel__tab")
-      .classList.toggle("fixed", scrollTop > 365);
+      .classList.toggle("fixed", scrollTop > 380);
   }, [scrollTop]);
+
   return (
     <div
       style={{ width: "100%", background: "var(--channel-background-color)" }}
@@ -54,7 +65,9 @@ export default function Channel(props) {
         }}
       />
       <div className="channel__info">
-        <div style={{ margin: "0 auto", width: "1284px" }}>
+        <div
+          style={{ margin: "0 auto", maxWidth: "1284px", padding: "0 16px" }}
+        >
           <div
             style={{
               display: "flex",
@@ -80,12 +93,24 @@ export default function Channel(props) {
             <SubscribeBtn channelVideo={channelVideo} />
           </div>
           <div className="channel__tab" onClick={(e) => handleChannelTab(e)}>
-            <div className="channel__tab-item active">HOME</div>
-            <div className="channel__tab-item">VIDEOS</div>
-            <div className="channel__tab-item">PLAYLISTS</div>
-            <div className="channel__tab-item">COMMUNITY</div>
-            <div className="channel__tab-item">CHANNELS</div>
-            <div className="channel__tab-item">ABOUT</div>
+            <div className="channel__tab-item active" data-index="0">
+              HOME
+            </div>
+            <div className="channel__tab-item" data-index="1">
+              VIDEOS
+            </div>
+            <div className="channel__tab-item" data-index="2">
+              PLAYLISTS
+            </div>
+            <div className="channel__tab-item" data-index="3">
+              COMMUNITY
+            </div>
+            <div className="channel__tab-item" data-index="4">
+              CHANNELS
+            </div>
+            <div className="channel__tab-item" data-index="5">
+              ABOUT
+            </div>
             <div className="channel__tab-search">
               <SearchOutlinedIcon className="channel__tab-search-icon" />
               <input
@@ -101,21 +126,39 @@ export default function Channel(props) {
       <div
         style={{
           margin: "0 auto",
-          width: "1284px",
+          maxWidth: "1284px",
+          padding: "0 16px",
           minHeight: "100vh",
         }}
       >
-        {playlists.map((playlist, index) => (
-          <div key={index}>
-            <ChannelPlaylistRow
-              name={playlist.name}
-              dsc={playlist.dsc}
-              index={index}
-              playlist={playlist}
-            />
-            {index < playlists.length - 1 && <div className="line" />}
-          </div>
-        ))}
+        <div className="channel__tab-content active">
+          {playlists.map((playlist, index) => (
+            <div key={index}>
+              <ChannelPlaylistRow
+                name={playlist.name}
+                dsc={playlist.dsc}
+                index={index}
+                playlist={playlist}
+              />
+              {index < playlists.length - 1 && <div className="line" />}
+            </div>
+          ))}
+        </div>
+        <div className="channel__tab-content">
+          <ChannelVideos videos={videos} />
+        </div>
+        <div className="channel__tab-content">
+          <ChannelPlaylistFull channelId={channelId} />
+        </div>
+        <div className="channel__tab-content">
+          <span>Community Coming soon.</span>
+        </div>
+        <div className="channel__tab-content">
+          <span>Channels Coming soon.</span>
+        </div>
+        <div className="channel__tab-content">
+          <ChannelAbout channelId={channelId} />
+        </div>
       </div>
     </div>
   );

@@ -14,10 +14,15 @@ import "antd/dist/antd.css";
 import logo from "./youtube-logo.png";
 import logoDark from "./youtube-logo-dark.png";
 
-const handleSidebar = () => {
-  document.querySelector(".sidebar").classList.toggle("min");
-  document.querySelector(".sidebar__full").classList.toggle("disabled");
-  document.querySelector(".sidebar__min").classList.toggle("disabled");
+const handleSidebar = (e) => {
+  console.log();
+  if (e.target.closest(".App").querySelector(".watch")) {
+    document.querySelector(".sidebar").classList.toggle("hide");
+  } else {
+    document.querySelector(".sidebar").classList.toggle("min");
+    document.querySelector(".sidebar__full").classList.toggle("disabled");
+    document.querySelector(".sidebar__min").classList.toggle("disabled");
+  }
 };
 
 const handleMode = () => {
@@ -60,7 +65,7 @@ export default function Header() {
               justifyContent: "center",
             }}
           >
-            <div className="icon btn-click" onClick={handleSidebar}>
+            <div className="icon btn-click" onClick={(e) => handleSidebar(e)}>
               <MenuOutlinedIcon />
             </div>
           </div>
@@ -88,16 +93,22 @@ export default function Header() {
           <div className="icon-search" onClick={handleOnSearch}>
             <SearchIcon />
           </div>
-          <MicOutlinedIcon className="icon" />
+          <MicOutlinedIcon className="icon" style={{ cursor: "no-drop" }} />
         </div>
         <div className="header__right">
-          <VideoCallOutlinedIcon className="icon" />
+          <VideoCallOutlinedIcon
+            className="icon"
+            style={{ cursor: "no-drop" }}
+          />
           <Brightness4Icon
             fontSize="small"
             className="icon"
             onClick={handleMode}
           />
-          <NotificationsNoneOutlinedIcon className="icon" />
+          <NotificationsNoneOutlinedIcon
+            className="icon"
+            style={{ cursor: "no-drop" }}
+          />
           <Link to="/channel/001">
             <Avatar
               className="user"

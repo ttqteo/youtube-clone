@@ -27,7 +27,7 @@
 .comment-react .icon {
   font-size: 14px;
   margin-right: 4px;
-  cursor: pointer;
+  cursor: no-drop;
 }
 
 .comment-row-wrapper .icon-option {
@@ -36,5 +36,5 @@
 
 .comment-row-wrapper:hover .icon-option {
   display: block;
-  cursor: pointer;
+  cursor: no-drop;
 }

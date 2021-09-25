@@ -1,0 +1,21 @@
+.modal-row {
+  display: flex;
+  align-items: center;
+  padding: 6px 48px 6px 0;
+  cursor: no-drop;
+}
+
+.modal-row .icon {
+  font-size: 24px;
+  margin: 0 20px 0 16px;
+}
+
+.modal-row span {
+  width: fit-content;
+  font-size: 14px;
+  display: block;
+}
+
+.modal-row:hover {
+  background-color: var(--hover-sidebar-background-color);
+}

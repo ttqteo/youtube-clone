@@ -1,0 +1,32 @@
+.channel-about {
+  display: flex;
+  justify-content: space-between;
+}
+
+.channel-about__left {
+  max-width: 60%;
+}
+
+.channel-about__card {
+  padding: 20px 0;
+  color: var(--heading-text-color);
+}
+
+.channel-about__title {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.channel-about__description {
+  font-size: 14px;
+}
+
+.channel-about__right {
+  padding-top: 20px;
+  width: 396px;
+}
+
+.channel-about__right .channel-about__card {
+  padding: 4px;
+}

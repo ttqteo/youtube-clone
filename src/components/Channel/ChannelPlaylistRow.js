@@ -4,7 +4,7 @@ import ArrowForwardIosOutlinedIcon from "@material-ui/icons/ArrowForwardIosOutli
 import ArrowBackIosOutlinedIcon from "@material-ui/icons/ArrowBackIosOutlined";
 import "./ChannelPlaylistRow.css";
 import VideoCard from "../elements/VideoCard";
-import { videos, channel } from "../api";
+import { videos } from "../api";
 import { Col, Row } from "antd";
 
 export default function ChannelPlaylistRow({ name, dsc, index, playlist }) {
@@ -50,7 +50,7 @@ export default function ChannelPlaylistRow({ name, dsc, index, playlist }) {
     <div style={{ padding: "12px 0" }}>
       <div style={{ display: "flex", alignItems: "center", margin: "4px 0" }}>
         <span
-          style={{ fontSize: "16px", fontWeight: "500", cursor: "pointer" }}
+          style={{ fontSize: "16px", fontWeight: "500", cursor: "no-drop" }}
         >
           {name}
         </span>
@@ -74,6 +74,7 @@ export default function ChannelPlaylistRow({ name, dsc, index, playlist }) {
         <Row
           style={{ marginTop: "16px" }}
           wrap={false}
+          gutter={4}
           className="channel-row__playlist"
         >
           {playlistVideos.map((video, index) => (

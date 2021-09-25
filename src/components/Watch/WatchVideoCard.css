@@ -46,7 +46,7 @@
 
 .icon-wrapper {
   display: flex;
-  cursor: pointer;
+  cursor: no-drop;
   margin-right: 16px;
 }
 

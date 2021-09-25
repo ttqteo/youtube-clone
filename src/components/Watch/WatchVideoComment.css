@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   margin-left: 32px;
-  cursor: pointer;
+  cursor: no-drop;
 }
 
 .state-wrapper .icon {
