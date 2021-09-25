@@ -71,6 +71,15 @@ body.modal-open .header {
   padding-right: 10px;
 }
 
+@media (max-width: 768px) {
+  body.modal-open {
+    padding-right: 0;
+  }
+  body.modal-open .header {
+    padding-right: 16px;
+  }
+}
+
 /* Scrollbar */
 
 /* width */
