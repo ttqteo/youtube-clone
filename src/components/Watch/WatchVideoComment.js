@@ -15,7 +15,7 @@ const comment = {
 
 export default function WatchVideoComment() {
   return (
-    <div>
+    <div className="comment-wrapper">
       <div className="state-wrapper">
         <span className="text">5 Comments</span>
         <div className="state-sort">

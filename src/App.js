@@ -32,6 +32,12 @@ function App() {
       document.querySelector(".sidebar").classList.remove("toggle");
       document.querySelector(".sidebar").classList.remove("hide");
     }
+    if (location.pathname.includes("channel")) {
+      const width = document.querySelector(
+        ".channel__tab-item.active"
+      ).offsetWidth;
+      document.querySelector(".channel__tab-line").style.width = width + "px";
+    }
   }, [location]);
   return (
     <div className="App" onClick={(e) => handleClickApp(e)}>

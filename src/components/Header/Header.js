@@ -15,7 +15,6 @@ import logo from "./youtube-logo.png";
 import logoDark from "./youtube-logo-dark.png";
 
 const handleSidebar = (e) => {
-  console.log();
   if (e.target.closest(".App").querySelector(".watch")) {
     document.querySelector(".sidebar").classList.toggle("hide");
   } else {
@@ -96,6 +95,7 @@ export default function Header() {
           <MicOutlinedIcon className="icon" style={{ cursor: "no-drop" }} />
         </div>
         <div className="header__right">
+          <SearchIcon className="icon" />
           <VideoCallOutlinedIcon
             className="icon"
             style={{ cursor: "no-drop" }}

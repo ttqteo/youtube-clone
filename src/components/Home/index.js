@@ -8,9 +8,6 @@ import "./Category.css";
 
 export default function Content() {
   const [scrollingLeft, setScrollingLeft] = useState(0);
-  const onScrollX = (e) => {
-    setScrollingLeft(e.target.documentElement.scrollTop);
-  };
   useEffect(() => {
     const categoryList = document.querySelector(".category__list");
     categoryList.addEventListener("scroll", (e) => {
@@ -65,7 +62,7 @@ export default function Content() {
         </div>
         <Row gutter={16}>
           {videos.map((video, index) => (
-            <Col key={index} xl={6} md={8} xs={24}>
+            <Col key={index} xl={6} md={12} xs={24}>
               <VideoCard type="home" video={video} />
             </Col>
           ))}

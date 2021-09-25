@@ -26,3 +26,9 @@
   margin-bottom: -4px;
   cursor: no-drop;
 }
+
+@media (max-width: 576px) {
+  .subscribe-btn {
+    font-size: 12px;
+  }
+}

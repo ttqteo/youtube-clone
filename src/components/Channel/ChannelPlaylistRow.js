@@ -78,7 +78,7 @@ export default function ChannelPlaylistRow({ name, dsc, index, playlist }) {
           className="channel-row__playlist"
         >
           {playlistVideos.map((video, index) => (
-            <Col span={4} key={index}>
+            <Col xl={4} md={8} xs={12} key={index}>
               <VideoCard
                 type="channel"
                 video={videos.find((value) => value.link === video)}

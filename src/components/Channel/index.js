@@ -60,7 +60,6 @@ export default function Channel(props) {
       <div
         className="channel-cover"
         style={{
-          height: "270px",
           backgroundImage: `url(${channelVideo.cover})`,
         }}
       />

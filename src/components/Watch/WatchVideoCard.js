@@ -15,12 +15,11 @@ export default function WatchVideoCard({ videoLink }) {
     (channel) => channel.channelID === curVideo.channelID
   );
   return (
-    <div>
+    <div className="watch-video__card">
       <div className="watch-video-card-wrapper">
         <div className="watch-video-play">
           <iframe
-            width="1280"
-            height="720"
+            className="watch-video-play-embbed"
             src={`https://www.youtube.com/embed/${videoLink}`}
             title="YouTube video player"
             frameBorder="0"

@@ -2,6 +2,7 @@
   background-position: center center;
   background-size: cover;
   background-color: #ccc;
+  height: 270px;
 }
 
 .channel__info {
@@ -44,7 +45,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 102px;
+  width: 0;
   border-radius: 4px;
   height: 4px;
   background-color: var(--heading-text-color);
@@ -102,4 +103,31 @@
 
 .channel__tab-content.active {
   display: block;
+}
+
+@media (max-width: 768px) {
+  .channel__tab {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .channel__tab-item {
+    display: none;
+  }
+  .channel__tab-item:nth-child(1),
+  .channel__tab-item:nth-child(2),
+  .channel__tab-item:nth-child(3) {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .channel__tab-search {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .channel-cover {
+    height: 180px;
+  }
 }

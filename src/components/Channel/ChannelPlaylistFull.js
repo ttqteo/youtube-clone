@@ -16,7 +16,7 @@ export default function ChannelPlaylistFull({ channelId }) {
       <div style={{ position: "relative" }}>
         <Row style={{ marginTop: "16px" }} gutter={4}>
           {playlists.map((playlist, index) => (
-            <Col span={4} key={index}>
+            <Col md={8} xs={12} xl={4} key={index}>
               {playlist.channelId === channelId && (
                 <div className="playlist-card">
                   <div className="playlist-card__thumbnail">

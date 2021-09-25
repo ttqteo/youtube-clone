@@ -289,3 +289,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media (max-width: 768px) {
+  .video-option-icon {
+    display: block;
+  }
+  .video-card.recommend {
+    justify-content: initial;
+    width: 100%;
+  }
+  .video-option-icon.recommend {
+    display: none;
+  }
+}

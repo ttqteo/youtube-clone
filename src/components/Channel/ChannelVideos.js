@@ -13,7 +13,7 @@ export default function ChannelVideos({ videos }) {
       <div style={{ position: "relative" }}>
         <Row style={{ marginTop: "16px" }} gutter={4}>
           {videos.map((video, index) => (
-            <Col span={4} key={index}>
+            <Col xl={4} md={8} xs={12} key={index}>
               <VideoCard type="channel" video={video} />
             </Col>
           ))}

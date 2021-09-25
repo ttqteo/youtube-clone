@@ -106,9 +106,43 @@
   cursor: pointer;
 }
 
+.header__right .icon:nth-child(1) {
+  display: none;
+}
+
 .header__right .user {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+/* iPad */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 16px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+  }
+  .header__left .icon {
+    display: none;
+  }
+  .header__left {
+    display: block;
+  }
+  .header__center{
+    display: none;
+  }
+
+  .header__right {
+    margin: 0;
+  }
+
+  .header__right .icon:nth-child(1) {
+    display: block;
+  }
+
+  .header__right .icon:nth-child(2),
+  .header__right .icon:nth-child(4) {
+    display: none;
+  }
 }

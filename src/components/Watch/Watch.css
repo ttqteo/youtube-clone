@@ -1,0 +1,9 @@
+.watch {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .watch {
+    flex-direction: column;
+  }
+}

@@ -15,3 +15,9 @@
 .state-wrapper .icon {
   margin-right: 8px;
 }
+
+@media (max-width: 768px) {
+  .comment-wrapper {
+    display: none;
+  }
+}

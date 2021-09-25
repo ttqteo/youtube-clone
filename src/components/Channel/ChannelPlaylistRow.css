@@ -54,3 +54,8 @@
   left: -16px;
   top: 37px;
 }
+@media (max-width: 768px) {
+  .channel-row__icon-next {
+    display: none;
+  }
+}
