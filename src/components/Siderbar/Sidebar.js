@@ -71,8 +71,8 @@ export default function Sidebar() {
           <li>• Sub/unsub</li>
           <li>• Modal option Video</li>
           <li>• Từng tab Channel</li>
-          <li style={{ fontWeight: "500" }}>Sắp phát triển</li>
           <li>• Responsive Tablet, Mobile</li>
+          <li style={{ fontWeight: "500" }}>Sắp phát triển</li>
           <li>• Đang cập nhật...</li>
         </ul>
       </div>
