@@ -1,6 +1,6 @@
 # Visited Deployed Website in Netlify
 
-[Youtube Phake](https://jovial-goodall-0f2f82.netlify.app/)
+Deploy in Netlify: [Youtube Phake](https://jovial-goodall-0f2f82.netlify.app/)
 
 # Getting Started with Create React App
 
